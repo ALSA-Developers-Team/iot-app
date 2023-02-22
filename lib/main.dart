@@ -11,12 +11,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    TextStyle montserratFont = const TextStyle(
+      fontFamily: 'Montserrat',
+      fontSize: 16,
+      fontWeight: FontWeight.normal
+    );
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFF12142D)
       ),
-      home: const HomePage(),
+      home: DefaultTextStyle(
+        style: montserratFont,
+        child: const HomePage()
+      ),
       debugShowCheckedModeBanner: false,
     );
   }

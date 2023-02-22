@@ -8,7 +8,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       return const Scaffold(
-        body: ScreenContainer(widget: Text('data', style: TextStyle(color: Colors.white, backgroundColor: Color(0xFFFFFFFF),))
+        body: ScreenContainer(
+          title: 'IOT Center',
+          screen: Text('data', style: TextStyle(color: Colors.white, backgroundColor: Color(0xFFFFFFFF)))
       ));
   }
 }

@@ -3,9 +3,10 @@ import 'package:iotapp/widgets/global/header.dart';
 import 'package:iotapp/widgets/global/nav_bar.dart';
 
 class ScreenContainer extends StatelessWidget {
-  const ScreenContainer({super.key, required this.widget, });
+  const ScreenContainer({ super.key, required this.screen, required this.title });
 
-  final Widget widget;
+  final Widget screen;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +14,28 @@ class ScreenContainer extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 20, top: 20, left: 10, right: 10),
       child: Stack(
         children: [
-          const Header(text: 'IOT Cennter'),
-          Container(
-            child: widget,
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Header(text: title)
           ),
-          const NavBar()
+          Positioned(
+            top: 80,
+            bottom: 50,
+            left: 0,
+            right: 0,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.only(top: 25, bottom: 25, right: 5, left: 5),
+              child: screen,
+            ),
+          ),
+          const Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: NavBar()
+          )
         ]
       ),
     );
