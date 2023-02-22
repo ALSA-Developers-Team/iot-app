@@ -15,8 +15,8 @@ class NavBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: const Color(0xFFFD7B62),
           gradient: const LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
               Color(0xFFFD7B62),
               Color(0xFFFB5A8C),
