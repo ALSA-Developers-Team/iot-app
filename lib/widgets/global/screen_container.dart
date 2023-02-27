@@ -3,10 +3,11 @@ import 'package:iotapp/widgets/global/header.dart';
 import 'package:iotapp/widgets/global/nav_bar.dart';
 
 class ScreenContainer extends StatelessWidget {
-  const ScreenContainer({ super.key, required this.screen, required this.title });
+  const ScreenContainer({ super.key, required this.screen, required this.title, required this.subtitle });
 
   final Widget screen;
   final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +19,10 @@ class ScreenContainer extends StatelessWidget {
             top: 0,
             left: 0,
             right: 0,
-            child: Header(text: title)
+            child: Header(title: title, subtitle: subtitle, type: 'header-1',)
           ),
           Positioned(
-            top: 80,
+            top: 120,
             bottom: 50,
             left: 0,
             right: 0,
