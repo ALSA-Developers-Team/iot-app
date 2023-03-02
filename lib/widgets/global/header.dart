@@ -69,14 +69,14 @@ Map<String, TextStyle> titleStyle(String type) {
     return {
       'title': const TextStyle(
                   fontFamily: 'Montserrat',
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.w900,
                   color: Colors.white 
                 ),
       'subtitle': const TextStyle(
                     fontFamily: 'Montserrat',
-                    fontSize: 20,
-                    fontWeight: FontWeight.w300,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
                     color: Colors.white
                   )
     };

@@ -26,8 +26,8 @@ class ScreenContainer extends StatelessWidget {
             bottom: 50,
             left: 0,
             right: 0,
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.only(top: 25, bottom: 25, right: 5, left: 5),
+            child: SingleChildScrollView(            
+              padding: const EdgeInsets.only(top: 15, bottom: 25, right: 5, left: 5),
               child: screen,
             ),
           ),

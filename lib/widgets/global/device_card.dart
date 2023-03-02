@@ -12,9 +12,9 @@ class _DeviceCardState extends State<DeviceCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top:5, left: 15, right: 15),
-      width: 10,
-      height: 180,
+      padding: const EdgeInsets.only(left: 3, right: 3),
+      height: 150,
+      width: 165,
       decoration: BoxDecoration(
         color: const Color(0xFF12142D).withOpacity(0.99),
         boxShadow: const [
@@ -30,7 +30,7 @@ class _DeviceCardState extends State<DeviceCard> {
       child: Column(
         children: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 margin: const EdgeInsets.only(top: 10),
