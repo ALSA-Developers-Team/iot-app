@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../models/screen_data.dart';
 
 
 class Header extends StatelessWidget {
@@ -9,8 +12,10 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ScreenData screenData = Get.find();
+
     return Container(
-      margin: const EdgeInsets.only(top: 15),
+      margin: EdgeInsets.only(top: screenData.heightAspectRatio * 0.085),
       alignment: Alignment.topCenter,
       decoration: const BoxDecoration(
         color: Colors.transparent,
@@ -20,11 +25,11 @@ class Header extends StatelessWidget {
         children: [
           Text(
             title,
-            style: titleStyle(type)["title"],
+            style: titleStyle(type, screenData)["title"],
           ),
           Text(
             subtitle,
-            style: titleStyle(type)["subtitle"],
+            style: titleStyle(type, screenData)["subtitle"],
           ),
         ],
       )
@@ -32,12 +37,12 @@ class Header extends StatelessWidget {
   }
 }
 
-Map<String, TextStyle> titleStyle(String type) {
+Map<String, TextStyle> titleStyle(String type, ScreenData screenData) {
   if(type == 'header-1'){
     return {
       'title': TextStyle(
                   fontFamily: 'Montserrat',
-                  fontSize: 55,
+                  fontSize: screenData.screenWidth * 0.15,
                   fontWeight: FontWeight.w900,
                   foreground: Paint()
                     ..shader = const LinearGradient(
@@ -51,7 +56,7 @@ Map<String, TextStyle> titleStyle(String type) {
                 ),
       'subtitle': TextStyle(
                     fontFamily: 'Montserrat',
-                    fontSize: 25,
+                    fontSize: screenData.screenWidth * 0.07,
                     fontWeight: FontWeight.w300,             
                     foreground: Paint()
                       ..shader = const LinearGradient(
@@ -65,17 +70,18 @@ Map<String, TextStyle> titleStyle(String type) {
                   )
     };
   }
+
   if(type == 'header-2'){
     return {
-      'title': const TextStyle(
+      'title': TextStyle(
                   fontFamily: 'Montserrat',
-                  fontSize: 16,
+                  fontSize: screenData.screenWidth * 0.04,
                   fontWeight: FontWeight.w900,
                   color: Colors.white 
                 ),
-      'subtitle': const TextStyle(
+      'subtitle': TextStyle(
                     fontFamily: 'Montserrat',
-                    fontSize: 16,
+                    fontSize: screenData.screenWidth * 0.04,
                     fontWeight: FontWeight.w400,
                     color: Colors.white
                   )

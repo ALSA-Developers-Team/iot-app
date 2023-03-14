@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../models/screen_data.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final ScreenData screenData = Get.find();
+
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        width: 319.83,
-        height: 78,
+        width: screenData.screenWidth * .85,
+        height: screenData.heightAspectRatio * 0.45,
         alignment: Alignment.center,
-        padding: const EdgeInsets.only(right: 30, left: 30),
+        padding: EdgeInsets.only(right: screenData.screenWidth * 0.08, left: screenData.screenWidth * 0.08),
         decoration: BoxDecoration(
           color: const Color(0xFFFD7B62),
           gradient: const LinearGradient(
